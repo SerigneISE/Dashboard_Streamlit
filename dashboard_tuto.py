@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from flask import Flask
 
 st.title("Serigne Mbaye THIAM")
 st.write("TP API STREAMLIT")
@@ -29,7 +30,7 @@ st.plotly_chart(box)
 
 # Graphique : Répartition des ventes en fonction du sexe
 st.subheader('Répartition des ventes en fonction du sexe')
-colors = ['#808080', '#FFFF00']
+colors = ['#FF0000', '#00FF00']  # Exemple de couleurs personnalisées (rouge et vert)
 pie = px.pie(imp_clic_achat, values='price', names='gender', color_discrete_sequence=colors)
 st.plotly_chart(pie)
 
