@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from flask import Flask
 import plotly.express as px
 
 st.title("Serigne Mbaye THIAM")
@@ -34,27 +33,15 @@ colors = ['#808080', '#FFFF00']
 pie = px.pie(imp_clic_achat, values='price', names='gender', color_discrete_sequence=colors)
 st.plotly_chart(pie)
 
-# Graphique : Nuage de points des ventes en fonction des produits
-st.subheader('Nuage de points des ventes en fonction des produits')
-scatter = px.scatter(imp_clic_achat, x='price', y='product_id')
-st.plotly_chart(scatter)
-
 # Graphique : Distribution des ventes par département
 st.subheader('Distribution des ventes par département')
 bar = px.bar(imp_clic_achat, x='dept', y='price', title='Distribution des ventes par département')
 st.plotly_chart(bar)
-
-# Graphique : Répartition des ventes par tranche d'âge
-st.subheader('Répartition des ventes par tranche d\'âge')
-pie_age = px.pie(imp_clic_achat, names='age', title='Répartition des ventes par tranche d\'âge')
-st.plotly_chart(pie_age)
 
 # Graphique : Répartition des ventes par campagne et par sexe
 st.subheader('Répartition des ventes par campagne et par sexe')
 stacked_bar = px.bar(imp_clic_achat, x='campaign_id', y='price', color='gender', barmode='stack', title='Répartition des ventes par campagne et par sexe')
 st.plotly_chart(stacked_bar)
 
-# Graphique : Relation entre l'âge et le prix des produits
-st.subheader('Relation entre l\'âge et le prix des produits')
-scatter = px.scatter(imp_clic_achat, x='age', y='price', title='Relation entre l\'âge et le prix des produits')
-st.plotly_chart(scatter)
+if __name__ == '__dashboard_tuto__':
+    app.run(debug=True)
