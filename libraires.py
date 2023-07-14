@@ -1,1 +1,4 @@
-streamlit/pandas/flask/plotly.express
+streamlit
+pandas
+flask
+plotly.express
